@@ -1,44 +1,44 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-;
+  ;
 
 declare module "@material-ui/core/styles/createPalette" {
-    interface PaletteOptions {
-        openTitle?: string
-        protectedTitle?: string
-    }
-    interface Palette {
-        openTitle?: string
-        protectedTitle?: string
-    }
+  interface PaletteOptions {
+    openTitle?: string
+    protectedTitle?: string
+  }
+  interface Palette {
+    openTitle?: string
+    protectedTitle?: string
+  }
 }
 
 declare module '@material-ui/core/styles/createTypography' {
-    interface TypographyOptions {
-        useNextVariants: boolean
-    }
+  interface TypographyOptions {
+    useNextVariants: boolean
+  }
 }
 
 const theme = createMuiTheme({
-    typography: {
-      useNextVariants: true,
-    },
-    palette: {
-      primary: {
-      light: '#8e8e8e',
-      main: '#616161',
-      dark: '#373737',
-      contrastText: '#fffde7',
+  typography: {
+    useNextVariants: true,
+  },
+  palette: {
+    primary: {
+      light: '#4f83cc',
+      main: '#01579b',
+      dark: '#002f6c',
+      contrastText: '#fff',
     },
     secondary: {
-      light: '#ffad42',
-      main: '#f57c00',
-      dark: '#bb4d00',
-      contrastText: '#fffde7',
+      light: '#9fffe0',
+      main: '#69f0ae',
+      dark: '#2bbd7e',
+      contrastText: '#000',
     },
-      openTitle: '#455a64',
-      protectedTitle: '#f57c00',
-      type: 'light'
-    }
-  })
+    openTitle: '#002f6c',
+    protectedTitle: '#2bbd7e',
+    type: 'light'
+  }
+})
 
-  export default theme;
+export default theme;

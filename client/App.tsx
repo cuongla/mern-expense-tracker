@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import MainRouter from './MainRouter';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
@@ -7,12 +7,14 @@ import { hot } from 'react-hot-loader';
 import './App.css';
 
 const App: FC = () => {
-    React.useEffect(() => {
+
+    useEffect(() => {
         const jssStyles = document.querySelector('#jss-server-side');
         if (jssStyles) {
             jssStyles.parentNode!.removeChild(jssStyles)
         }
-    }, [])
+    }, []);
+
     return (
         <BrowserRouter>
             <ThemeProvider theme={theme}>

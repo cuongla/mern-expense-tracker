@@ -17,7 +17,7 @@ import { openTitleStyle } from '../../styles/openTitle';
 import { AuthFormProps } from '../../types/authTypes';
 
 
-const RegisterForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, loading }) => {
+const RegisterForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmitting }) => {
     const classes = useStyles();
     const titleStyle = openTitleStyle();
 
@@ -64,7 +64,7 @@ const RegisterForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, loadi
                         variant="contained"
                         onClick={onSubmit}
                         className={classes.submit}>
-                        { loading ? 'Regsitering...' : 'Register' }
+                        { isSubmitting ? 'Regsitering...' : 'Register' }
                     </Button>
                 </CardActions>
             </Card>

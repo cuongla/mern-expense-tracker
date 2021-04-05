@@ -10,7 +10,7 @@ import { useStyles } from './styles';
 import { openTitleStyle } from '../../styles/openTitle';
 import { AuthFormProps } from '../../types/authTypes';
 
-const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, loading }) => {
+const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmitting }) => {
     const classes = useStyles();
     const titleStyle = openTitleStyle();
 
@@ -48,7 +48,7 @@ const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, loading 
                     variant="contained"
                     onClick={onSubmit}
                     className={classes.submit}>
-                        { loading ? 'Logging in...' : 'Login'}
+                        { isSubmitting ? 'Logging in...' : 'Login'}
                 </Button>
             </CardActions>
         </Card>

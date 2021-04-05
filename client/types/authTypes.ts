@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 
-export interface AuthState extends SignupData {
+export interface AuthState extends RegisterData {
     error: string
     redirectToReferrer?: boolean
     open?: boolean
@@ -10,16 +10,16 @@ export interface AuthFormProps {
     values: AuthState
     handleChange: (name: string) => (event: ChangeEvent<HTMLInputElement>) => void
     onSubmit: () => void
-    loading: boolean
+    isSubmitting: boolean
 }
 
-export interface SignupData {
+export interface RegisterData {
     name?: string
     email: string
     password: string
 }
 
-export interface SigninData {
+export interface LoginData {
     email: string
     password: string
 }
