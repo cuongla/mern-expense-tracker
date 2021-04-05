@@ -1,0 +1,22 @@
+.slick-prev:before, .slick-next:before {
+    color: black !important;
+}
+
+.slick-prev, .slick-next {
+    color: black !important;
+}
+
+.slick-track {
+    margin-bottom: 1.5rem !important;
+}
+
+.slick-slide, 
+.slick-active, 
+.slick-current {
+    width: 250px !important;
+    margin: 0 10px !important;
+}
+
+.MuiCardContent-root {
+    padding: 5px 8px !important;
+}

@@ -1,0 +1,6 @@
+{
+  "verbose": false,
+  "watch": ["server"],
+  "ext": "ts,json",
+  "exec": "webpack --mode=development --config webpack.config.server.ts && node ./dist/server.generated.js"
+}
