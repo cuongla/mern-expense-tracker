@@ -2,7 +2,6 @@ import { Response, NextFunction } from 'express';
 import User from '../models/user.model';
 import extend from 'lodash/extend';
 import errorHandler from '../utils/dbErrorHandler';
-import config from '../../config';
 import { IRequest } from '../interfaces/express.interfaces';
 import { UserModel } from '../interfaces/user.interfaces';
 

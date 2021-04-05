@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import { getUser, getUserId, getUsers, removeUser, stripe_auth, updateUser } from '../controllers/user.controller';
+import { getUser, getUserId, getUsers, removeUser, updateUser } from '../controllers/user.controller';
 import { hasAuthorization, isLoggedIn } from '../controllers/auth.controllers';
 
 
@@ -22,12 +22,6 @@ router.route('/users/:userId')
     .get(isLoggedIn, getUser)
     .put(isLoggedIn, hasAuthorization, updateUser)
     .delete(isLoggedIn, hasAuthorization, removeUser);
-
-/**
-* @ PUT
-* @ Making payment
-*/
-router.route('/stripe_auth/:userId').put( isLoggedIn, hasAuthorization, stripe_auth, updateUser);
 
 /**
 * @ PARAM

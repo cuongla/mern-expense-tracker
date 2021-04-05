@@ -14,6 +14,7 @@ dotenv.config();
 // routes
 import userRoutes from './routes/user.routes';
 import authRoutes from './routes/auth.routes';
+import expenseRoutes from './routes/expense.routes';
 
 // modules for server side rendering
 import React from 'react'
@@ -46,6 +47,7 @@ app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
 // mount routes
 app.use('/api/v1', userRoutes);
 app.use('/api/v1', authRoutes);
+app.use('/api/v1', expenseRoutes)
 
 
 // connect to react 

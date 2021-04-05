@@ -28,9 +28,12 @@ export const login = async (req: IRequest, res: Response) => {
             "email": req.body.email
         });
 
-        if (!user) return res.status(401).json({
-            error: "User not found"
-        });
+        if (!user) {
+            return res.status(401).json({
+                error: "User not found"
+            });
+        }
+
 
         if (!user.authenticate(req.body.password)) {
             return res.status(401).send({
@@ -43,6 +46,7 @@ export const login = async (req: IRequest, res: Response) => {
             { _id: user._id },
             config.jwtSecret
         );
+
         res.cookie("t", token, {
             expires: new Date()
         });
@@ -64,9 +68,9 @@ export const login = async (req: IRequest, res: Response) => {
 };
 
 export const logout = (req: IRequest, res: Response) => {
-    res.clearCookie("t")
+    res.clearCookie("t");
     return res.status(200).json({
-        message: "signed out"
+        message: "Account is logged out"
     });
 };
 
@@ -76,7 +80,11 @@ export const isLoggedIn = expressJwt({
     algorithms: ['sha1', 'RS256', 'HS256'],
 });
 
-export const hasAuthorization = (req: IRequest, res: Response, next: NextFunction) => {
+export const hasAuthorization = (
+    req: IRequest,
+    res: Response,
+    next: NextFunction
+) => {
     const authorization = req.profile
         && req.auth
         && req.profile._id == req.auth._id;
@@ -85,4 +93,4 @@ export const hasAuthorization = (req: IRequest, res: Response, next: NextFunctio
         { error: 'User is not authorized' });
 
     next();
-}
+};
