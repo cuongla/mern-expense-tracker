@@ -63,7 +63,7 @@ const Profile = () => {
 
                         <Typography variant="h6" className={classes.title}>
                             Profile
-                </Typography>
+                        </Typography>
                         <List dense>
                             <ListItem>
                                 <ListItemAvatar>

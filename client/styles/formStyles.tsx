@@ -1,12 +1,17 @@
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const formStyles = makeStyles((theme: Theme) => ({
     card: {
         maxWidth: 600,
         margin: 'auto',
         textAlign: 'center',
         marginTop: theme.spacing(12),
         paddingBottom: theme.spacing(2)
+    },
+    title: {
+        marginTop: theme.spacing(2),
+        color: theme.palette.openTitle,
+        fontSize: '1em'
     },
     error: {
         verticalAlign: 'middle'
@@ -20,9 +25,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
         margin: 'auto',
         marginBottom: theme.spacing(2)
     },
-    checked: {},
-    subheading: {},
-    bar: {},
     filename: {
         marginLeft: '10px'
     },

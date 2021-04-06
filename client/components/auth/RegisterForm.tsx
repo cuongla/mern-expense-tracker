@@ -12,13 +12,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CardError from '../reusable/CardError';
-import { useStyles } from './styles';
+import { formStyles } from '../../styles/formStyles';
 import { openTitleStyle } from '../../styles/openTitle';
 import { AuthFormProps } from '../../types/authTypes';
 
 
 const RegisterForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmitting }) => {
-    const classes = useStyles();
+    const classes = formStyles();
     const titleStyle = openTitleStyle();
 
     return (

@@ -10,6 +10,9 @@ import Login from './pages/auth/Login';
 import Users from './pages/Users';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
+import Reports from './pages/Reports';
+import Expenses from './pages/expense/Expenses';
+import AddExpense from './pages/expense/AddExpense';
 
 
 const MainRouter: FC = () => {
@@ -25,6 +28,11 @@ const MainRouter: FC = () => {
 
                 <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
                 <Route exact path="/user/:userId" component={Profile}/>
+
+                <PrivateRoute path="/expenses/all" component={Expenses}/>
+                <PrivateRoute path="/expenses/new" component={AddExpense}/>
+
+                <PrivateRoute path="/expenses/reports" component={Reports}/>
             </Switch>
         </React.Fragment>
     );

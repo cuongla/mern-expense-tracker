@@ -6,12 +6,12 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import CardError from '../reusable/CardError';
-import { useStyles } from './styles';
+import { formStyles } from '../../styles/formStyles';
 import { openTitleStyle } from '../../styles/openTitle';
 import { AuthFormProps } from '../../types/authTypes';
 
 const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmitting }) => {
-    const classes = useStyles();
+    const classes = formStyles();
     const titleStyle = openTitleStyle();
 
     return (

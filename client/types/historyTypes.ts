@@ -1,3 +1,5 @@
+import { StringNullableChain } from "lodash";
+
 export interface ILocation {
     from: {
         pathname: string
@@ -10,11 +12,5 @@ export interface ICredentials {
 
 export interface IParams {
     userId?: string
-    shopId?: string
-    productId?: string
-    orderId?: string
-    auctionId?: string
-    category?: string
-    search?: string
-    cartItemId?: string
+    expenseId?: string
 }
