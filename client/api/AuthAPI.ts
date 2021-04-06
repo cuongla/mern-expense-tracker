@@ -1,6 +1,6 @@
-import { SigninData, SignupData } from '../types/authTypes';
+import { LoginData, RegisterData } from '../types/authTypes';
 
-export const registerUser = async (user: SignupData) => {
+export const registerUser = async (user: RegisterData) => {
     try {
         let response = await fetch(
             '/api/v1/auth/signup/',
@@ -18,7 +18,7 @@ export const registerUser = async (user: SignupData) => {
     };
 };
 
-export const loginUser = async (user: SigninData) => {
+export const loginUser = async (user: LoginData) => {
     try {
         let response = await fetch(
             '/api/v1/auth/signin',

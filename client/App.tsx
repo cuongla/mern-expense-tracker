@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './theme';
 import { hot } from 'react-hot-loader';
-import './App.css';
 
 const App: FC = () => {
 

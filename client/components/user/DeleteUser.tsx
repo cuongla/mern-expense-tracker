@@ -20,18 +20,20 @@ const DeleteUser: FC<DeleteUserProps> = ({ userId }) => {
     const [open, setOpen] = useState(false);
     const [redirect, setRedirect] = useState(false);
     const jwt = auth.isAuthenticated();
+    const [isDelete, setIsDelete] = useState(false); 
 
     const onDelete = () => {
+        setIsDelete(true);
         deleteUser(
             { userId },
             { t: jwt.token })
             .then((data) => {
                 if (data && data.error) {
                     console.log(data.error)
-                } else {
-                    auth.clearJWT(() => console.log('deleted'))
-                    setRedirect(true)
                 }
+                    auth.clearJWT(() => console.log('deleted'));
+                    setIsDelete(false);
+                    setRedirect(true)
             });
     };
 
@@ -44,11 +46,17 @@ const DeleteUser: FC<DeleteUserProps> = ({ userId }) => {
 
     return (
         <span>
-            <IconButton aria-label="Delete" onClick={openDialog} color="secondary">
+            <IconButton
+                aria-label="Delete"
+                onClick={openDialog}
+                color="secondary">
                 <DeleteIcon />
             </IconButton>
+
             <Dialog open={open} onClose={closeDialog}>
-                <DialogTitle>{"Delete Account"}</DialogTitle>
+                <DialogTitle>
+                    {"Delete Account"}
+                </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         Are you sure to delete your account?
@@ -59,7 +67,7 @@ const DeleteUser: FC<DeleteUserProps> = ({ userId }) => {
                         Cancel
                     </Button>
                     <Button onClick={onDelete} color="secondary">
-                        Delete
+                        { isDelete ? 'Deleting...' : 'Delete' }
                     </Button>
                 </DialogActions>
             </Dialog>

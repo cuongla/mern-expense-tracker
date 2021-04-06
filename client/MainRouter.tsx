@@ -8,6 +8,9 @@ import Home from './pages/Home';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Users from './pages/Users';
+import Profile from './pages/profile/Profile';
+import EditProfile from './pages/profile/EditProfile';
+
 
 const MainRouter: FC = () => {
     return (
@@ -19,6 +22,9 @@ const MainRouter: FC = () => {
 
                 <Route path="/auth/login" component={Login} />
                 <Route path="/auth/register" component={Register} />
+
+                <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
+                <Route exact path="/user/:userId" component={Profile}/>
             </Switch>
         </React.Fragment>
     );

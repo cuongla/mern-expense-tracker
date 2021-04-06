@@ -1,14 +1,13 @@
-export interface User {
+export interface IUser {
     _id?: string
     name: string
+    password?: string
     email?: string
     created?: Date
-    seller?: Boolean
-    stripe_seller?: any
-    stripe_customer?: any
-    stripe?: any
+    updated?: Date | number
 }
 
-export interface UserState extends User{
 
+export interface IProfile extends IUser{
+    error?: string
 }

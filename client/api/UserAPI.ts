@@ -1,5 +1,5 @@
 import { IParams, ICredentials } from '../types/historyTypes';
-import { User } from '../types/userTypes';
+import { IUser } from '../types/userTypes';
 
 export const getUsers = async (signal: AbortSignal) => {
     try {
@@ -37,7 +37,7 @@ export const getUserDetail = async (
 export const updateUser = async (
     params: IParams, 
     credentials: ICredentials, 
-    user: User
+    user: IUser
 ) => {
     try {
         let response = await fetch('/api/v1/users/' + params.userId, {
