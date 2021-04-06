@@ -31,6 +31,7 @@ const Expenses = () => {
     const date = new Date(), y = date.getFullYear(), m = date.getMonth()
     const [firstDay, setFirstDay] = useState(new Date(y, m, 1))
     const [lastDay, setLastDay] = useState(new Date(y, m + 1, 0))
+    
     useEffect(() => {
         const abortController = new AbortController();
         const signal = abortController.signal;
@@ -142,7 +143,7 @@ const Expenses = () => {
                     variant="contained"
                     color="secondary"
                     onClick={searchClicked}>
-                    GO
+                    Search
                 </Button>
             </div>
             {expenses.map((expense, index) => {

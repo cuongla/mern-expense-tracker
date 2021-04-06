@@ -53,7 +53,9 @@ const YearlyBar = () => {
     }
     return (
         <div>
-            <Typography variant="h6" className={classes.title}>Your monthly expenditures in</Typography>
+            <Typography variant="h6" className={classes.title}>
+                Your yearly expenditures in
+            </Typography>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <DatePicker value={year} onChange={handleDateChange} views={["year"]}
                     disableFuture

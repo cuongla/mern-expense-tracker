@@ -99,14 +99,14 @@ const ExpenseOverview = () => {
                         className={classes.spent}
                         color="primary">
                             ${expensePreview.today ? expensePreview.today.totalSpent : '0'}
-                            <span className={classes.day}>today</span>
+                            <span className={classes.day}> today</span>
                     </Typography>
                     <Typography
                         variant="h5"
                         className={classes.spent}
                         color="primary">
                             ${expensePreview.yesterday ? expensePreview.yesterday.totalSpent : '0'}
-                            <span className={classes.day}>yesterday </span>
+                            <span className={classes.day}> yesterday </span>
                     </Typography>
                     <Link to="/expenses/all">
                         <Typography variant="h6">
@@ -117,7 +117,7 @@ const ExpenseOverview = () => {
             </div>
             <Divider />
             <div className={classes.categorySection}>
-                {expenseCategories.map((expense, index) => {
+                {expenseCategories.slice(0, 10).map((expense, index) => {
                     return (
                         <div key={index} style={{ display: 'grid', justifyContent: 'center' }}>
                             <Typography
