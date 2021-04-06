@@ -95,7 +95,7 @@ export const averageCategories = async (params, credentials: ICredentials, signa
 }
 
 export const yearlyExpenses = async (
-    params: IParams,
+    params: any,
     credentials: ICredentials,
     signal: AbortSignal
 ) => {
@@ -116,7 +116,7 @@ export const yearlyExpenses = async (
 }
 
 export const plotExpenses = async (
-    params: IParams,
+    params: any,
     credentials: ICredentials,
     signal: AbortSignal
 ) => {
