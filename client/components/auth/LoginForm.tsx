@@ -9,6 +9,7 @@ import CardError from '../reusable/CardError';
 import { formStyles } from '../../styles/formStyles';
 import { openTitleStyle } from '../../styles/openTitle';
 import { AuthFormProps } from '../../types/authTypes';
+import { Link } from 'react-router-dom';
 
 const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmitting }) => {
     const classes = formStyles();
@@ -51,6 +52,13 @@ const LoginForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSubmit
                         { isSubmitting ? 'Logging in...' : 'Login'}
                 </Button>
             </CardActions>
+            <CardContent>
+                <p>Test Email: test@test.com</p>
+                <p>Test Password: test123</p>
+            </CardContent>
+            <CardContent>
+                Don't have an account? <Link to="/auth/register">Register now</Link>
+            </CardContent>
         </Card>
     )
 }

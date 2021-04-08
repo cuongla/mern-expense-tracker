@@ -26,7 +26,7 @@ const Navbar = withRouter(({ history }) => (
     <AppBar position="static">
         <Toolbar>
             <Typography variant="h6" color="inherit">
-                MERN Expense Tracker
+                Expense Tracker
       </Typography>
             <div>
                 <Link to="/">
@@ -45,40 +45,30 @@ const Navbar = withRouter(({ history }) => (
                     </span>)
                 }
             </div>
-            <div style={{ 'position': 'absolute', 'right': '10px' }}><span style={{ 'float': 'right' }}>
-                {
-                    !auth.isAuthenticated() && (<span>
-                        <Link to="/auth/register">
-                            <Button style={isActive(history, "/signup")}>Sign up
-                            </Button>
-                        </Link>
-                        <Link to="/auth/login">
-                            <Button style={isActive(history, "/signin")}>Sign In
-                            </Button>
-                        </Link>
-                    </span>)
-                }
-                {
-                    auth.isAuthenticated() && (<span>
-                        <Link to="/expenses/new">
-                            <Button style={isButtonActive(history, "/expenses/new")}>
-                                <AddIcon style={{ marginRight: 4 }} />
+            <div style={{ 'position': 'absolute', 'right': '10px' }}>
+                <span style={{ 'float': 'right' }}>
+                    {
+                        auth.isAuthenticated() && (<span>
+                            <Link to="/expenses/new">
+                                <Button style={isButtonActive(history, "/expenses/new")}>
+                                    <AddIcon style={{ marginRight: 4 }} />
                                     Add Expense
                                 </Button>
-                        </Link>
-                        <Link to={"/user/" + auth.isAuthenticated().user._id}>
-                            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
-                                My Profile
+                            </Link>
+                            <Link to={"/user/" + auth.isAuthenticated().user._id}>
+                                <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>
+                                    My Profile
                             </Button>
-                        </Link>
-                        <Button color="inherit" onClick={() => {
-                            auth.clearJWT(() => history.push('/'))
-                        }}>
-                            Logout
+                            </Link>
+                            <Button color="inherit" onClick={() => {
+                                auth.clearJWT(() => history.push('/'))
+                            }}>
+                                Logout
                         </Button>
-                    </span>)
-                }
-            </span></div>
+                        </span>
+                        )
+                    }
+                </span></div>
         </Toolbar>
     </AppBar>
 ))

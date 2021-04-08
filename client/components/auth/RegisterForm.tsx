@@ -64,9 +64,12 @@ const RegisterForm: FC<AuthFormProps> = ({ values, handleChange, onSubmit, isSub
                         variant="contained"
                         onClick={onSubmit}
                         className={classes.submit}>
-                        { isSubmitting ? 'Regsitering...' : 'Register' }
+                        {isSubmitting ? 'Regsitering...' : 'Register'}
                     </Button>
                 </CardActions>
+                <CardContent>
+                    Already have an account? <Link to="/auth/login">Log in now</Link>
+                </CardContent>
             </Card>
             <Dialog
                 open={values.open}
