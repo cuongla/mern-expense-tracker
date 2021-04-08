@@ -13,7 +13,7 @@ const config: webpack.Configuration = {
         publicPath: '/dist/'
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
         fallback: {
             path: require.resolve('path-browserify')
         },
@@ -30,11 +30,6 @@ const config: webpack.Configuration = {
             },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: '/node_modules/'
-            },
-            {
-                test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: '/node_modules/'
             },
